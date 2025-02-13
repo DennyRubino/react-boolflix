@@ -3,12 +3,12 @@ import { useAppDataContext } from "../context/AppDataContext";
 import StarRate from "./StarRate";
 
 export default function Main() {
-  const { movies } = useAppDataContext();
+  const { movies, tvSeries } = useAppDataContext();
 
   return (
     <main>
-      <h2>Lista Film e Serie</h2>
       <ul>
+        <h2> Film </h2>
         {movies.map((movie) => (
           <li key={movie.id}>
             <h3>{movie.title}</h3>
@@ -21,6 +21,22 @@ export default function Main() {
           </li>
         ))}
       </ul>
+      <section>
+        <ul>
+          <h2>Serie TV</h2>
+          {tvSeries.map((serie) => (
+            <li key={serie.id}>
+              <h3>{serie.title}</h3>
+              <p>Titolo originale: {serie.original_name}</p>
+              <p>Lingua: {serie.original_language}</p>
+              <p>
+                Valutazione: {serie.vote_average}
+                <StarRate vote_average={serie.vote_average} />
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }
