@@ -21,7 +21,19 @@ export default function Flag({ language }) {
           alt="Japanese"
           width="20"
         />
-      ) : null}
+      ) : language === "fr" ? (
+        <img
+          src="https://purecatamphetamine.github.io/country-flag-icons/3x2/FR.svg"
+          alt="French"
+          width="20"
+        />
+      ) : language === "es" ? (
+        <img
+          src="https://purecatamphetamine.github.io/country-flag-icons/3x2/ES.svg"
+          alt="Spanish"
+          width="20"
+        />
+      ) : null}{" "}
     </span>
   );
 }

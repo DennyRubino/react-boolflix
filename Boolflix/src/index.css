@@ -1,0 +1,94 @@
+/*Body*/
+body {
+  background-color: #434343;
+  margin: 0 0 0 0;
+}
+
+/*Header*/
+h1 {
+  color: red;
+}
+header {
+  display: flex;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  background-color: black;
+}
+
+.logo {
+  padding-left: 25px;
+}
+
+.search-bar {
+  border-radius: 8px;
+  padding-right: 25px;
+}
+
+/*Main*/
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 6px;
+  height: 350px;
+}
+
+.card-content {
+  margin-top: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-original-title {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-language {
+  font-size: 14px;
+  color: #555;
+}
+
+.card-vote {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f5a623;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

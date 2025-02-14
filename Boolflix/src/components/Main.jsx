@@ -1,48 +1,40 @@
 import React from "react";
 import { useAppDataContext } from "../context/AppDataContext";
-import StarRate from "./StarRate";
 import Card from "./Card";
-import Flag from "./Flag";
 
 export default function Main() {
   const { movies, tvSeries } = useAppDataContext();
 
   return (
     <main>
-      <ul>
-        <h2>Film</h2>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            <h3>{movie.title}</h3>
-            <p>Titolo originale: {movie.original_title}</p>
-            <p>
-              Lingua: {movie.original_language}
-              <Flag language={movie.original_language} />
-            </p>
-            <p>
-              Valutazione: {movie.vote_average}
-              <StarRate vote_average={movie.vote_average} />
-            </p>
-            <Card posterPath={movie.poster_path} />
-          </li>
-        ))}
-      </ul>
-      <section>
+      <section className="container-Film">
+        <ul>
+          <h2>Film</h2>
+          {movies.map((movie) => (
+            <li key={movie.id}>
+              <Card
+                posterPath={movie.poster_path}
+                title={movie.title}
+                originalTitle={movie.original_title}
+                language={movie.original_language}
+                voteAverage={movie.vote_average}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="container-Tvseries">
         <ul>
           <h2>Serie TV</h2>
           {tvSeries.map((serie) => (
             <li key={serie.id}>
-              <h3>{serie.name}</h3>
-              <p>Titolo originale: {serie.original_name}</p>
-              <p>
-                Lingua: {serie.original_language}
-                <Flag language={serie.original_language} />
-              </p>
-              <p>
-                Valutazione: {serie.vote_average}
-                <StarRate vote_average={serie.vote_average} />
-              </p>
-              <Card posterPath={serie.poster_path} />
+              <Card
+                posterPath={serie.poster_path}
+                title={serie.name}
+                originalTitle={serie.original_name}
+                language={serie.original_language}
+                voteAverage={serie.vote_average}
+              />
             </li>
           ))}
         </ul>
