@@ -63,24 +63,20 @@ ul {
   height: 350px;
 }
 
-.card-content {
-  margin-top: 10px;
-}
-
 .card-title {
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: white;
 }
 
 .card-original-title {
   font-size: 14px;
-  color: #666;
+  color: white;
 }
 
 .card-language {
   font-size: 14px;
-  color: #555;
+  color: white;
 }
 
 .card-vote {
@@ -91,4 +87,30 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 5px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-content {
+  opacity: 1;
 }

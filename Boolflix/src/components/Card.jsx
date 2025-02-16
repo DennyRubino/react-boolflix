@@ -1,8 +1,3 @@
-import React from "react";
-import "../index.css"; // Importa il file CSS
-import StarRate from "./StarRate";
-import Flag from "./Flag";
-
 export default function Card({
   posterPath,
   title,
@@ -18,14 +13,18 @@ export default function Card({
       <img src={imageUrl} alt={title} className="card-img" />
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
-        <p className="card-original-title">Titolo originale: {originalTitle}</p>
-        <p className="card-language">
-          Lingua: {language} <Flag language={language} />
-        </p>
-        <p className="card-vote">
-          Valutazione: {voteAverage}
-          <StarRate vote_average={voteAverage} />
-        </p>
+        <div className="card-info">
+          <p className="card-original-title">
+            Titolo originale: {originalTitle}
+          </p>
+          <p className="card-language">
+            Lingua: {language} <Flag language={language} />
+          </p>
+          <p className="card-vote">
+            Valutazione: {voteAverage}
+            <StarRate vote_average={voteAverage} />
+          </p>
+        </div>
       </div>
     </div>
   );
